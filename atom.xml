@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-30T03:39:18.000Z</updated>
+  <updated>2018-10-30T04:23:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>815. Bus Routes</title>
+    <link href="http://yoursite.com/2018/10/29/815-Bus-Routes/"/>
+    <id>http://yoursite.com/2018/10/29/815-Bus-Routes/</id>
+    <published>2018-10-30T04:21:49.000Z</published>
+    <updated>2018-10-30T04:23:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Two google hard problems in a day? What a feast!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int numBusesToDestination(int[][] routes, int S, int T) &#123;</span><br><span class="line">        if (S == T) return 0;</span><br><span class="line">        Set&lt;Integer&gt; visited = new HashSet&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();</span><br><span class="line">        Map&lt;Integer, ArrayList&lt;Integer&gt;&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        int res = 0;</span><br><span class="line">        for (int i = 0; i &lt; routes.length; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; routes[i].length; j++) &#123;</span><br><span class="line">                ArrayList&lt;Integer&gt; buses = map.getOrDefault(routes[i][j], new ArrayList&lt;&gt;());</span><br><span class="line">                buses.add(i);</span><br><span class="line">                map.put(routes[i][j], buses);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        q.offer(S);</span><br><span class="line">        while (!q.isEmpty()) &#123;</span><br><span class="line">            int len = q.size();</span><br><span class="line">            res++;</span><br><span class="line">            for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">                int cur = q.poll();</span><br><span class="line">                ArrayList&lt;Integer&gt; buses = map.get(cur);</span><br><span class="line">                for (int bus: buses) &#123;</span><br><span class="line">                    if (visited.contains(bus)) continue;</span><br><span class="line">                    visited.add(bus);</span><br><span class="line">                    for (int j = 0; j &lt; routes[bus].length; j++) &#123;</span><br><span class="line">                        if (routes[bus][j] == T) return res;</span><br><span class="line">                        q.offer(routes[bus][j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Two google hard problems in a day? What a feast!&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
+    
+  </entry>
   
   <entry>
     <title>857. Minimum Cost to Hire K Workers</title>
