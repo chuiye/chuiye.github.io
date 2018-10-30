@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>木须龙</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-10-30T03:39:18.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Chuiye Kong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>857. Minimum Cost to Hire K Workers</title>
+    <link href="http://yoursite.com/2018/10/29/857-Minimum-Cost-to-Hire-K-Workers/"/>
+    <id>http://yoursite.com/2018/10/29/857-Minimum-Cost-to-Hire-K-Workers/</id>
+    <published>2018-10-30T01:39:40.000Z</published>
+    <updated>2018-10-30T03:39:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today, Fluffy God recommended this problem to me, credit to Fluffy God LOL. It’s said to be a high-frequency Google interview problem.<br>One key thing is, apart from thinking of wage[i] : quality[i] = wage[j] : quality[j], to know that because workers are sorted by ratio of wage/quality,  for every ratio, we find the minimum possible total quality of K workers.<br>Thus, we use PriorityQueue to remove a worker with highest quality so that we keep K workers in the group.<br>Yay, day 1 is done!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public double mincostToHireWorkers(int[] q, int[] w, int K) &#123;</span><br><span class="line">        double[][] workers = new double[q.length][2];</span><br><span class="line">        for (int i = 0; i &lt; q.length; i++) &#123;</span><br><span class="line">            workers[i] = new double[]&#123;(double)w[i] / q[i], (double)q[i]&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(workers, (a, b) -&gt; Double.compare(a[0], b[0]));</span><br><span class="line">        double res = Double.MAX_VALUE, qsum = 0;</span><br><span class="line">        PriorityQueue&lt;Double&gt; pq = new PriorityQueue&lt;&gt;();</span><br><span class="line">        for (double[] worker: workers) &#123;</span><br><span class="line">            if (pq.size() == K) qsum += pq.poll();</span><br><span class="line">            qsum += worker[1];</span><br><span class="line">            pq.offer(-worker[1]);</span><br><span class="line">            if (pq.size() == K) res = Math.min(res, qsum * worker[0]);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Today, Fluffy God recommended this problem to me, credit to Fluffy God LOL. It’s said to be a high-frequency Google interview problem.&lt;br
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="Heap" scheme="http://yoursite.com/tags/Heap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>100 Day Project - LeetCode</title>
+    <link href="http://yoursite.com/2018/10/28/hello-world/"/>
+    <id>http://yoursite.com/2018/10/28/hello-world/</id>
+    <published>2018-10-28T22:08:08.000Z</published>
+    <updated>2018-10-29T04:25:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is my first 100-day project. During this 100 days, I will solve at lease 1 <a href="https://leetcode.com/" target="_blank" rel="noopener">LeetCode</a> problem everyday and participate in the Contest every Saturday. I’m not in job search, instead I feel quite challenging and enjoyable to work on algorithm problems under not much pressure. I plan to post most of my notes and solution here when I see interesting problems. </p><p>As Isaac Asimov said:</p><blockquote><p>The true delight is in the finding out rather than in the knowing.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This is my first 100-day project. During this 100 days, I will solve at lease 1 &lt;a href=&quot;https://leetcode.com/&quot; target=&quot;_blank&quot; rel=&quot;noop
+      
+    
+    </summary>
+    
+      <category term="Minecraft" scheme="http://yoursite.com/categories/Minecraft/"/>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="100DayProject" scheme="http://yoursite.com/tags/100DayProject/"/>
+    
+  </entry>
+  
+</feed>
