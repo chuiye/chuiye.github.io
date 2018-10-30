@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-30T04:23:46.000Z</updated>
+  <updated>2018-10-30T04:59:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>100 Day Project - Learning Japanese</title>
+    <link href="http://yoursite.com/2018/10/29/100-Day-Project-Learning-Japanese/"/>
+    <id>http://yoursite.com/2018/10/29/100-Day-Project-Learning-Japanese/</id>
+    <published>2018-10-30T04:29:53.000Z</published>
+    <updated>2018-10-30T04:59:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Tomorrow, I’m going to take my first Japanese lesson from an informal class I’ve signed up. I’ve always wanted to learn Japanese but gave up just at the beginning of every time. Hopefully, I can go further this time. To me, learning a new language is a chance to view the world differently and to think differently. Why the personalities of people from different countries are so different? And why do people have so much in common when they are speaking similar languages? I’m not a native English speaker, but I can feel the upper, cheerful tone of English actually makes people feel happier, less stressful, even less reasonable in some sense lol. While Chinese speakers are usually discreet in word and deed, the ancient far eastern culture impacts its language and its people profoundly. Japanese always makes me curious in the way that Japan also has the same asian culture, but at the same time it has the kind of delicacy that’s hard find in other countries, which I’m so fascinated about. Plus, it’s easier to learn since it has some similarities with Chinese anyway. Tomorrow, we shall see.</p><blockquote><p>Intelligence is an accident of evolution, and not necessarily an advantage.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Tomorrow, I’m going to take my first Japanese lesson from an informal class I’ve signed up. I’ve always wanted to learn Japanese but gave
+      
+    
+    </summary>
+    
+      <category term="Minecraft" scheme="http://yoursite.com/categories/Minecraft/"/>
+    
+    
+      <category term="100DayProject" scheme="http://yoursite.com/tags/100DayProject/"/>
+    
+      <category term="Japanese" scheme="http://yoursite.com/tags/Japanese/"/>
+    
+  </entry>
   
   <entry>
     <title>815. Bus Routes</title>
