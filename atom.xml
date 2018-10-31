@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-30T04:59:55.000Z</updated>
+  <updated>2018-10-31T03:59:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>418. Sentence Screen Fitting</title>
+    <link href="http://yoursite.com/2018/10/30/418-Sentence-Screen-Fitting/"/>
+    <id>http://yoursite.com/2018/10/30/418-Sentence-Screen-Fitting/</id>
+    <published>2018-10-31T03:27:56.000Z</published>
+    <updated>2018-10-31T03:59:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Took my Japanese class today, it was fun. But I’m so tired now, just did one medium Google problem, with two solutions. Not a bad day …<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int wordsTyping(String[] sentence, int rows, int cols) &#123;</span><br><span class="line">        String s = String.join(&quot; &quot;, sentence) + &quot; &quot;;</span><br><span class="line">        int start = 0, l = s.length();</span><br><span class="line">        for (int i = 0; i &lt; rows; i++) &#123;</span><br><span class="line">            start += cols;</span><br><span class="line">            if (s.charAt(start % l) == &apos; &apos;) &#123;</span><br><span class="line">                start++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                while (start &gt; 0 &amp;&amp; s.charAt((start-1) % l) != &apos; &apos;) &#123;</span><br><span class="line">                    start--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return start / s.length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int wordsTyping(String[] sentence, int rows, int cols) &#123;</span><br><span class="line">        int[] dp = new int[sentence.length];</span><br><span class="line">        int n = sentence.length;</span><br><span class="line">        for(int i = 0, prev = 0, len = 0; i &lt; sentence.length; ++i) &#123;</span><br><span class="line">            if(i != 0 &amp;&amp; len &gt; 0) len -= sentence[i - 1].length() + 1;</span><br><span class="line">            while(len + sentence[prev % n].length() &lt;= cols) len += sentence[prev++ % n].length() + 1;</span><br><span class="line">            dp[i] = prev;</span><br><span class="line">        &#125;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for(int i = 0, k = 0; i &lt; rows; ++i) &#123;</span><br><span class="line">            count += dp[k] - k;</span><br><span class="line">            k = dp[k] % n;</span><br><span class="line">        &#125;</span><br><span class="line">        return count / n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Took my Japanese class today, it was fun. But I’m so tired now, just did one medium Google problem, with two solutions. Not a bad day …&lt;b
+      
+    
+    </summary>
+    
+    
+      <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="string" scheme="http://yoursite.com/tags/string/"/>
+    
+      <category term="Dynamic Programming" scheme="http://yoursite.com/tags/Dynamic-Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>100 Day Project - Learning Japanese</title>
@@ -62,9 +89,9 @@
     </summary>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
       <category term="BFS" scheme="http://yoursite.com/tags/BFS/"/>
     
@@ -89,9 +116,9 @@
     </summary>
     
     
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
       <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
       <category term="Heap" scheme="http://yoursite.com/tags/Heap/"/>
     
