@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-01T04:07:56.000Z</updated>
+  <updated>2018-11-02T03:54:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>850. Rectangle Area II</title>
+    <link href="http://yoursite.com/2018/11/01/850-Rectangle-Area-II/"/>
+    <id>http://yoursite.com/2018/11/01/850-Rectangle-Area-II/</id>
+    <published>2018-11-02T03:52:14.000Z</published>
+    <updated>2018-11-02T03:54:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Too hard for me T^T have to come back tmr …<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    class Point &#123;</span><br><span class="line">        int x, y, val;</span><br><span class="line">        Point (int x, int y, int val) &#123;</span><br><span class="line">            this.x = x;</span><br><span class="line">            this.y = y;</span><br><span class="line">            this.val = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public int rectangleArea(int[][] rectangles) &#123;</span><br><span class="line">        int M = 1000000007;</span><br><span class="line">        List&lt;Point&gt; data = new ArrayList&lt;&gt;();</span><br><span class="line">        for (int[] r: rectangles) &#123;</span><br><span class="line">            data.add(new Point(r[0], r[1], 1));</span><br><span class="line">            data.add(new Point(r[2], r[3], 1));</span><br><span class="line">            data.add(new Point(r[0], r[3], -1));</span><br><span class="line">            data.add(new Point(r[2], r[1], -1));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Collections.sort(data, (a, b) -&gt; (a.x - b.x));</span><br><span class="line">        TreeMap&lt;Integer, Integer&gt; map = new TreeMap&lt;&gt;();</span><br><span class="line">        int preX = -1, preY = -1, result = 0;</span><br><span class="line">        for (int i = 0; i &lt; data.size(); i++) &#123;</span><br><span class="line">            Point p = data.get(i);</span><br><span class="line">            map.put(p.y, map.getOrDefault(p.y, 0) + p.val);</span><br><span class="line">            if ( i == data.size() - 1 || data.get(i + 1).x &gt; p.x) &#123;</span><br><span class="line">                if (preX &gt; -1) &#123;</span><br><span class="line">                    result += ((long) preY * (p.x - preX)) % M;</span><br><span class="line">                    result %= M;</span><br><span class="line">                &#125;</span><br><span class="line">                preY = calcY(map);</span><br><span class="line">                preX = p.x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private int calcY(TreeMap&lt;Integer, Integer&gt; map) &#123;</span><br><span class="line">        int result = 0, pre = -1, count = 0;</span><br><span class="line">        for (Map.Entry&lt;Integer, Integer&gt; e: map.entrySet()) &#123;</span><br><span class="line">            if (pre &gt;= 0 &amp;&amp; count &gt; 0) &#123;</span><br><span class="line">                result += e.getKey() - pre;</span><br><span class="line">            &#125;</span><br><span class="line">            count += e.getValue();</span><br><span class="line">            pre = e.getKey();</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Too hard for me T^T have to come back tmr …&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
+      
+    
+    </summary>
+    
+    
+      <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
+    
+      <category term="TreeMap" scheme="http://yoursite.com/tags/TreeMap/"/>
+    
+      <category term="Redo" scheme="http://yoursite.com/tags/Redo/"/>
+    
+  </entry>
   
   <entry>
     <title>135. Candy</title>
@@ -37,11 +64,11 @@
     
       <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
     
-      <category term="Greedy" scheme="http://yoursite.com/tags/Greedy/"/>
-    
       <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
     
       <category term="Uber" scheme="http://yoursite.com/tags/Uber/"/>
+    
+      <category term="Greedy" scheme="http://yoursite.com/tags/Greedy/"/>
     
   </entry>
   
@@ -68,8 +95,6 @@
     
       <category term="Google" scheme="http://yoursite.com/tags/Google/"/>
     
-      <category term="Uber" scheme="http://yoursite.com/tags/Uber/"/>
-    
       <category term="Facebook" scheme="http://yoursite.com/tags/Facebook/"/>
     
       <category term="Amazon" scheme="http://yoursite.com/tags/Amazon/"/>
@@ -77,6 +102,8 @@
       <category term="Microsoft" scheme="http://yoursite.com/tags/Microsoft/"/>
     
       <category term="Oracle" scheme="http://yoursite.com/tags/Oracle/"/>
+    
+      <category term="Uber" scheme="http://yoursite.com/tags/Uber/"/>
     
   </entry>
   
